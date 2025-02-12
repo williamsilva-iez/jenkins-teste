@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        GITHUB_TOKEN = credentials('jenkins')  // Store your GitHub token securely in Jenkins
+        GITHUB_TOKEN = credentials('cc25bcc3-a5a1-4218-b72c-745b198e535c')  // Store your GitHub token securely in Jenkins
     }
 
     stages {
