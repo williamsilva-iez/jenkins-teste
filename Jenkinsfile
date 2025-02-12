@@ -7,9 +7,6 @@ pipeline {
 
     stages {
         stage('Validation') {
-            when {
-                branch 'PR-*'  // Run this stage only for PR branches
-            }
             steps {
                 script {
                     // Code validation script (lint, tests, etc.)
