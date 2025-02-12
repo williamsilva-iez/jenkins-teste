@@ -7,11 +7,14 @@ pipeline {
 
     stages {
         stage('Validation') {
+            when {
+                branch 'PR-*'  
+            }
             steps {
                 script {
                     // Code validation script (lint, tests, etc.)
                     echo 'Validando código...'
-                    sh "flutter doctor"
+                    sh "flutter analyze"
                     // If validation fails, this will block the PR.
                     if (currentBuild.result == 'FAILURE') {
                         error('Code validation failed. PR is blocked.')
@@ -22,7 +25,7 @@ pipeline {
 
         stage('Build & Deploy') {
             when {
-                branch 'develop'  // Trigger this stage only on the 'develop' branch
+                branch 'main'  // Trigger this stage only on the 'develop' branch
             }
             steps {
                 script {
