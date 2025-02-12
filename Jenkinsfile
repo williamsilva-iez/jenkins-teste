@@ -31,10 +31,6 @@ pipeline {
                 script {
                     // Build and deploy logic for the 'develop' branch
                     echo 'Building and Deploying...'
-                    sh 'npm install'
-                    sh 'npm run build'
-                    // Add deploy steps here (e.g., deploy to a staging server)
-                    sh 'npm run deploy'
                 }
             }
         }
